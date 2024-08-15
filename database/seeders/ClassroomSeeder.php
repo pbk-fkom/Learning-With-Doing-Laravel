@@ -4,21 +4,22 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Dosen;
+use App\Models\Classroom;
 
-class DosenSeeder extends Seeder
+class ClassroomSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Dosen::insert([
+        Classroom::insert([
             [
-                "nama" => "Dikri Fauzan Amrulloh",
-                "pengampu" => "Pemrograman level 999",
-                "classroom_id" => '1',
-            ]
+                'nama' => 'SI',
+            ],
+            [
+                'nama' => 'TI',
+            ],
         ]);
     }
 }

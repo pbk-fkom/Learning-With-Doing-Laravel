@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Student extends Model
+class Classroom extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['nama'];
+
     public function Classroom(){
-        // hanya bisa di miliki
-        return $this->belongsTo(Student::class); 
+        return $this->hasMany(Dosen::class);
     }
 }

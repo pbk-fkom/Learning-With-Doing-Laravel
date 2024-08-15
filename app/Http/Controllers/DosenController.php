@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Dosen;
+use App\Models\Classroom;
 
 class DosenController extends Controller
 {
@@ -28,7 +29,8 @@ class DosenController extends Controller
      */
     public function create()
     {
-        return view("createDosen");
+        $classrooms = Classroom::all();
+        return view("createDosen", ['classrooms' => $classrooms]);
     }
 
     /**
@@ -36,9 +38,18 @@ class DosenController extends Controller
      */
     public function store(Request $request)
     {
+        $request -> validate([
+            'nama' => 'required|min:3',
+            'pengampu'=> ['required', 'min:3', 'max:20'],
+            'classroom_id' => 'required',
+            // php artisan make:request DosenRequest
+        ]);
+
         Dosen::create([
             'nama' => $request->nama,
-            'pengampu' => $request->pengampu
+            'pengampu' => $request->pengampu,
+            'classroom_id' => $request->classroom_id,
+            'created_at' => now(),
         ]);
 
         return redirect()->route('dosen.index');
