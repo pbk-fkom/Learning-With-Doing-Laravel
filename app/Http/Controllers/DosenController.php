@@ -45,8 +45,16 @@ class DosenController extends Controller
             // php artisan make:request DosenRequest
         ]);
 
+        //dd($request->hasFile("foto));
+        //unicid();
+
+        $namaFile = "dosen_" . uniqid() . "." . $request -> file("foto")->getClientOriginalExtension();
+
+        $request->file("foto")->storeAs("image", $namaFile, "public");
+
         Dosen::create([
             'nama' => $request->nama,
+            'foto' => $namaFile,
             'pengampu' => $request->pengampu,
             'classroom_id' => $request->classroom_id,
             'created_at' => now(),

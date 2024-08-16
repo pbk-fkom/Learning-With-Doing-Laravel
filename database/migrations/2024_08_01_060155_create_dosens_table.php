@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('dosens', function (Blueprint $table) {
             $table->id();
             $table->string("nama");
+            $table->string("foto");
             $table->string("pengampu");
             $table->foreignId('classroom_id');
             $table->timestamps();

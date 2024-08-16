@@ -10,7 +10,7 @@ class Dosen extends Model
     use HasFactory;
 
     // kolom mana saja yang boleh di di isi user
-    protected $fillable = ["nama", "pengampu", "classroom_id"];
+    protected $fillable = ["nama", "foto", "pengampu", "classroom_id"];
 
     // kolom mana saja yang tidak boleh di isi user
     protected $guarded = ["id"];

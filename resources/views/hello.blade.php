@@ -5,6 +5,7 @@
         <tr>
             <td>No</td>
             <td>Nama</td>
+            <td>Foto</td>
             <td>Pengampu</td>
             <td>Kelas</td>
             <td>Aksi</td>
@@ -24,6 +25,10 @@
         <tr>
             <td>{{ $index+1 }}</td>
             <td>{{ $dosen -> nama }}</td>
+            <td>
+                {{-- php artisan storage:link --}}
+                <img src="{{ asset("storage/image/" . $dosen -> foto) }}" style="width:100px; height:100px; object-fit:cover;" alt="">
+            </td>
             <td>{{ $dosen -> pengampu }}</td>
             <td>{{ $dosen -> classroom -> nama }}</td>
             <td>
@@ -38,7 +43,7 @@
         </tr>
         @empty
         <tr>
-            <td colspan="4">
+            <td colspan="5">
                 <center>Data Kosong</center>
             </td>
         </tr>

@@ -1,9 +1,10 @@
 @extends('layout')
 @section('body')
-<form action="{{ route("dosen.store") }}" method="POST">
+<form action="{{ route("dosen.store") }}" method="POST" enctype="multipart/form-data">
     @csrf
     {{-- Croside Request Forgery --}}
     <input type="text" name="nama" placeholder="Nama">
+    <input type="file" name="foto">
     <input type="text" name="pengampu" placeholder="Pengampu" value="{{ old('nama') }}">
     @error('nama')
         {{ $message}}

@@ -16,6 +16,7 @@ class DosenSeeder extends Seeder
         Dosen::insert([
             [
                 "nama" => "Dikri Fauzan Amrulloh",
+                "foto" => "default.jpg",
                 "pengampu" => "Pemrograman level 999",
                 "classroom_id" => '1',
             ]
