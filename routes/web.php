@@ -1,16 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DosenController;
-use App\Http\Controllers\ClassroomController;
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Admin\ProductController;
 
 Route::get('/', function () {
-    return redirect("/login");
+    return view('welcome');
 });
 
-Route::resource("/dosen", DosenController::class)->middleware("auth");
-Route::resource("/classroom", ClassroomController::class)->middleware("auth");
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin/login', [AuthController::class, 'login']);
+Route::post('/admin/login', [AuthController::class, 'authenticate'])->name('admin.authenticate');
+Route::resource('/admin/product', ProductController::class);

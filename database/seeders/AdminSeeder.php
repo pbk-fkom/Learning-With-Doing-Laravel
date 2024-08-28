@@ -4,22 +4,21 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Classroom;
+use App\Models\Admin;
 
-class ClassroomSeeder extends Seeder
+class AdminSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Classroom::insert([
+        Admin::insert([
             [
-                'nama' => 'SI',
-            ],
-            [
-                'nama' => 'TI',
-            ],
+                'name' => 'Dikri Fauzan Amrulloh',
+                'email' => 'admin@test.com',
+                'password' => 'admin123'
+            ]
         ]);
     }
 }

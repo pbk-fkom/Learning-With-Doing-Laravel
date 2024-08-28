@@ -15,8 +15,10 @@ Pemateri by Ilham Hafidz
 - Upload Files
 - Authentication (https://medium.com/@laraveltuts/install-laravel-ui-41095120b)
 
-### Day 4 (Soon)
-- Project E-Commerces
+### Day 4
+- Project E-Commerce Part 1
+- Authentication
+- Create, Read, Update, Delete
 
 ## Progress
 ```
