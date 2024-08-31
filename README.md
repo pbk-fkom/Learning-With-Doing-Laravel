@@ -1,6 +1,8 @@
 ## Learning With Doing
 Pemateri by Ilham Hafidz
 
+
+
 ### Day 1
 - Create
 - Read
@@ -20,7 +22,17 @@ Pemateri by Ilham Hafidz
 - Authentication
 - Create, Read, Update, Delete
 
+## Day 5
+- Halaman Customer
+- Search
+- Modal Detile
+
+## Day 6 (Soon)
+- keranjang
+- Quantity
+- Checkout
+
 ## Progress
 ```
-[===========>--------------] 30%
+[==============>-----------] 40%
 ```
