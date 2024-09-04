@@ -48,8 +48,9 @@ class TransactionController
             "total" => $request->qty,
         ]);
 
+        // 
         $cart = Cart::whereProductId($request->product_id)->whereUserId(1)->first();
-        $cart->delete();
+        $cart->delete(); 
 
         return redirect()->route("carts.index");
 
