@@ -3,8 +3,14 @@
 @section('body')
 <nav class="navbar bg-body-light">
   <div class="container d-flex justify-between">
-    <span class="navbar-brand mb-0 h1">Navbar Store</span>
-    <a href="{{ route('carts.index') }}" class="btn btn-success">Keranjang</a>
+    <span class="navbar-brand mb-0 h1">{{ auth()->user()->name }}</span>
+    <div class="d-flex gap-3">
+      <a href="{{ route('carts.index') }}" class="btn btn-success">Keranjang</a>
+      <form method="POST" action="{{ route('logout')}}">
+        @csrf
+        <button class="btn btn-danger">Logout</button>
+      </form>
+    </div>
   </div>
 </nav>
 <div class="container">
